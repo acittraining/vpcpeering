@@ -30,9 +30,6 @@ resource "aws_vpc_peering_connection" "just_peer" {
 
 }
 
-
-
-
 // creating public subnet in requester_vpc and private subnet in accepter_vpc
 
 resource "aws_subnet" "create_subnet" {
@@ -67,9 +64,6 @@ resource "aws_internet_gateway" "requester_igw" {
 
   }
 }
-
-
-
 
 /* creating route_table in accepter_vpc in which our destination is the cidr of public_subnet of requester_vpc and target is the id of peering_connection */
 
@@ -172,8 +166,6 @@ resource "aws_security_group" "create_sg" {
 
     }
 }
-
-
 
 
 // launching both the instances with different key_pair
